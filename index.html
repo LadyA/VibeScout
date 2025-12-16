@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VibeScout – Find Your Perfect Spot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <div class="logo-circle">VS</div>
+      <div>
+        <h1>VibeScout</h1>
+        <p>Find the exact vibe — patios, kids, dogs, music & more.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Filters -->
+    <section class="filters">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search by name, food, or vibe..."
+      />
+
+      <select id="typeSelect">
+        <option value="">All types</option>
+        <option value="restaurant">Restaurant</option>
+        <option value="bar">Bar</option>
+        <option value="event_space">Event space</option>
+        <option value="cafe">Cafe</option>
+        <option value="brewery">Brewery</option>
+      </select>
+
+      <select id="openNowSelect">
+        <option value="">Any time</option>
+        <option value="now">Open now</option>
+        <option value="morning">Morning</option>
+        <option value="afternoon">Afternoon</option>
+        <option value="evening">Evening</option>
+      </select>
+
+      <div class="filter-group">
+        <label><input type="checkbox" id="familyFilter" /> Family-friendly</label>
+        <label><input type="checkbox" id="petFilter" /> Pet-friendly</label>
+        <label><input type="checkbox" id="patioFilter" /> Patio</label>
+        <label><input type="checkbox" id="playgroundFilter" /> Playground</label>
+        <label><input type="checkbox" id="fencedFilter" /> Fenced</label>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Vibes:</span>
+        <label><input type="checkbox" class="featureCheckbox" value="live_music" /> Live music</label>
+        <label><input type="checkbox" class="featureCheckbox" value="crafts" /> Crafts</label>
+        <label><input type="checkbox" class="featureCheckbox" value="trivia" /> Trivia</label>
+        <label><input type="checkbox" class="featureCheckbox" value="outdoor_only" /> Outdoor</label>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section>
+      <div id="resultCount" class="result-count"></div>
+      <div id="results" class="results"></div>
+    </section>
+  </main>
+
+  <!-- Simple modal for place details -->
+  <div id="detailModal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button id="modalCloseBtn" class="modal-close">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
