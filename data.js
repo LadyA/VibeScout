@@ -119,7 +119,7 @@ const places = [
     name: "Market Yard Events",
     type: "event_space",
     cuisine: ["varies"],
-    happyHour: true,
+    happyHour: false,
     city: "Austin",
     address: "654 Market St",
     lat: 30.268,
