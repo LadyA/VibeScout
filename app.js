@@ -9,7 +9,7 @@ const playgroundFilter = document.getElementById("playgroundFilter");
 const fencedFilter = document.getElementById("fencedFilter");
 const featureCheckboxes = document.querySelectorAll(".featureCheckbox");
 const happyHourFilter = document.getElementById("happyHourFilter");
-
+happyHourFilter.addEventListener("change", applyFilters);
 const resultCountEl = document.getElementById("resultCount");
 const resultsDiv = document.getElementById("results");
 
@@ -130,6 +130,7 @@ function applyFilters() {
     if (patioFilter.checked && !place.hasPatio) return false;
     if (playgroundFilter.checked && !place.hasPlayground) return false;
     if (fencedFilter.checked && !place.fenced) return false;
+      if (happyHourFilter.checked && !place.happyHour) return false;
 
     // time filter
     if (!matchesTimeFilter(place, timeValue)) return false;
@@ -220,7 +221,6 @@ playgroundFilter.addEventListener("change", applyFilters);
 fencedFilter.addEventListener("change", applyFilters);
 featureCheckboxes.forEach((cb) => cb.addEventListener("change", applyFilters));
 happyHourFilter.addEventListener("change", applyFilters);
-if (happyHourFilter.checked && !place.happyHour) return false;
 
 
 
