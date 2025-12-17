@@ -115,9 +115,9 @@ function applyFilters() {
   const filtered = places.filter((place) => {
     // text search
     const fullText =
-      `${place.name} ${place.cuisine.join(" ")} ${place.vibes?.join(" ") || ""} ${place.features.join(
-        " "
-      )}`.toLowerCase();
+      `${place.name} ${place.cuisine.join(" ")} ${(place.menuItems || []).join(" ")} ${place.vibes?.join(" ") || ""} ${place.features.join(" ")}`
+  .toLowerCase();
+
 
     if (query && !fullText.includes(query)) return false;
 
@@ -184,6 +184,7 @@ function openPlaceModal(place) {
 
     <div class="chips" style="margin-top: 8px;">
       ${place.familyFriendly ? `<span class="chip chip--accent">Family-friendly</span>` : ""}
+      ${place.happyHour ? `<span class="chip chip--accent">Happy hour</span>` : ""}
       ${place.petFriendly ? `<span class="chip">Pet-friendly</span>` : ""}
       ${place.hasPatio ? `<span class="chip">Patio</span>` : ""}
       ${place.hasPlayground ? `<span class="chip">Playground</span>` : ""}
