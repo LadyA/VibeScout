@@ -9,7 +9,6 @@ const playgroundFilter = document.getElementById("playgroundFilter");
 const fencedFilter = document.getElementById("fencedFilter");
 const featureCheckboxes = document.querySelectorAll(".featureCheckbox");
 const happyHourFilter = document.getElementById("happyHourFilter");
-happyHourFilter.addEventListener("change", applyFilters);
 const resultCountEl = document.getElementById("resultCount");
 const resultsDiv = document.getElementById("results");
 
