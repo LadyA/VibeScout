@@ -12,6 +12,7 @@ const places = [
     address: "123 Sunshine Ave",
     lat: 30.2672,
     lng: -97.7431,
+    menuItems: ["margarita", "tacos", "chips and queso", "kids mac and cheese"]
     familyFriendly: true,
     petFriendly: true,
     hasPatio: true,
